@@ -14,4 +14,4 @@ Este proyecto Django REST FRAMEWORK proporciona una aplicación web para la gest
     python manage.py runserver
 
 ## Vista previa
-    ![Vista previa](swagger.png)
+![Vista previa](swagger.png)
