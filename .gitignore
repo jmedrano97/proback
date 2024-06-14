@@ -1,3 +1,6 @@
 .vscode
 venv
 utils
+*.pyc
+*.pyo
+__pycache__
