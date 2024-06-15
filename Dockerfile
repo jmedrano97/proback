@@ -1,18 +1,20 @@
-# Usa una imagen base oficial de Python
-FROM python:3.9
+FROM python:3.8
 
-# Establece el directorio de trabajo en el contenedor
-WORKDIR /code
+# Set unbuffered output for python
+ENV PYTHONUNBUFFERED 1
 
-# Copia el archivo de requisitos y los instala
-COPY requirements.txt /code/
-RUN pip install --no-cache-dir -r requirements.txt
+# Create app directory
+WORKDIR /app
 
-# Copia el resto del código de la aplicación
-COPY . /code/
+# Install app dependencies
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
-# Expone el puerto 8000 para el servidor de desarrollo de Django
+# Bundle app source
+COPY . .
+
+# Expose port
 EXPOSE 8000
 
-# Define el comando por defecto para ejecutar el servidor de desarrollo
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# entrypoint to run the django.sh file
+ENTRYPOINT ["/app/django.sh"]
