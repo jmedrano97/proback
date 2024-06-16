@@ -12,9 +12,10 @@ RUN pip install -r requirements.txt
 
 # Bundle app source
 COPY . .
-
 # Expose port
 EXPOSE 8000
 
 # entrypoint to run the django.sh file
-ENTRYPOINT ["/app/django.sh"]
+ENTRYPOINT ["paython", "manage.py", "makemigrations"]
+ENTRYPOINT ["paython", "manage.py", "migrate"]
+ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]

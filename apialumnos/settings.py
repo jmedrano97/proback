@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'apialumnos.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': os.environ.get('DB_DRIVER','django.db.backends.postgresql'),
-        'USER': os.environ.get('PG_USER','postgres'),
-        'PASSWORD':os.environ.get('PG_PASSWORD','postgres'),
-        'NAME': os.environ.get('PG_DB','postgres'),
+        'USER': os.environ.get('PG_USER','jimmy'),
+        'PASSWORD':os.environ.get('PG_PASSWORD','jaime123'),
+        'NAME': os.environ.get('PG_DB','alumnosdb'),
         'PORT': os.environ.get('PG_PORT','5432'),
-        'HOST': os.environ.get('PG_HOST','localhost'), # uses the container if set, otherwise it runs locally
+        'HOST': os.environ.get('PG_HOST','localhost'), # uses the container if set, others the container if set, otherwise it runs locally
     }
 }
 

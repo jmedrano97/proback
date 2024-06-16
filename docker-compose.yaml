@@ -1,8 +1,8 @@
 version: "3.9"
 
 services:
-  djangoapp:
-    container_name: djangoapp
+  api:
+    container_name: api
     build: .
     ports:
       - "8000:8000"
@@ -26,6 +26,15 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+
+  frontalumnos:
+    container_name: frontalumnos
+    build:
+      context: ./frontalumnos
+    ports:
+      - "5173:5173"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
 
 volumes:
   pgdata: {}
