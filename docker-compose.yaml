@@ -27,14 +27,5 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
-  frontalumnos:
-      container_name: frontalumnos
-      build:
-        context: ./frontalumnos
-      ports:
-        - "5173:5173"
-      environment:
-        - CHOKIDAR_USEPOLLING=true
-      
 volumes:
   pgdata: {}
