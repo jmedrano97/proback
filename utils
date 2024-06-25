@@ -15,5 +15,11 @@ docker start mi_postgres
 
 ------------------------------------------
 python3 -m venv python_alumnos
-sudo apt install python3.8-venv
+(sudo apt install python3.8-venv)
 
+source ./bin/activate
+
+pip install -r requirements.txt
+
+python manage.py migrate
+python manage.py runserver
