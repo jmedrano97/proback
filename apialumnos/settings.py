@@ -78,13 +78,21 @@ WSGI_APPLICATION = 'apialumnos.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': os.environ.get('DB_DRIVER','django.db.backends.postgresql'),
-        'USER': os.environ.get('PG_USER','jimmy'),
-        'PASSWORD':os.environ.get('PG_PASSWORD','jaime123'),
-        'NAME': os.environ.get('PG_DB','alumnosdb'),
-        'PORT': os.environ.get('PG_PORT','5432'),
-        'HOST': os.environ.get('PG_HOST','localhost'), # uses the container if set, others the container if set, otherwise it runs locally
+    # 'default': {
+    #     'ENGINE': os.environ.get('DB_DRIVER','django.db.backends.postgresql'),
+    #     'USER': os.environ.get('PG_USER','jimmy'),
+    #     'PASSWORD':os.environ.get('PG_PASSWORD','jaime123'),
+    #     'NAME': os.environ.get('PG_DB','alumnosdb'),
+    #     'PORT': os.environ.get('PG_PORT','5432'),
+    #     'HOST': os.environ.get('PG_HOST','localhost'), # uses the container if set, others the container if set, otherwise it runs locally
+    # }
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER': 'jimmy',
+        'PASSWORD':'jaime123',
+        'NAME': 'alumnosdb',
+        'PORT': '5432',
+        'HOST': 'localhost', # uses the container if set, others the container if set, otherwise it runs localy
     }
 }
 

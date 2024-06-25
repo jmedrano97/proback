@@ -1,0 +1,19 @@
+docker run --name nombre_del_contenedor -e POSTGRES_PASSWORD=tu_contraseña -p 5432:5432 -d postgres
+docker run --name mi_postgres -e POSTGRES_PASSWORD=jaime1233 -p 5432:5432 -d postgres
+
+
+CONTAINER ID   IMAGE         COMMAND                  CREATED         STATUS                     PORTS     NAMES
+9f49fba23fe2   postgres:12   "docker-entrypoint.s…"   2 days ago      Exited (0) 2 days ago                mi_postgres
+1701cad4dff0   back          "uvicorn main:app --…"   10 months ago   Exited (0) 10 months ago             trusting_banzai
+8738ca9e0004   mysql         "docker-entrypoint.s…"   10 months ago   Exited (0) 10 months ago             db
+
+
+Correr
+docker start mi_postgres
+
+
+
+------------------------------------------
+python3 -m venv python_alumnos
+sudo apt install python3.8-venv
+
