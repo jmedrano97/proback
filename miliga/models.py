@@ -43,7 +43,7 @@ class Competencias(models.Model):
     ]
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=255)
-    Liga = models.ForeignKey(Ligas, on_delete=models.CASCADE, related_name='competencias')
+    liga = models.ForeignKey(Ligas, on_delete=models.CASCADE, related_name='competencias')
     created_at = models.DateTimeField(auto_now_add=True)
     tipo = models.CharField(max_length=255, choices=COMPETENCIAS_TYPE_CHOICES, default=PUNTOS)
 

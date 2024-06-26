@@ -2,7 +2,7 @@ from django.urls import path, include
 from rest_framework import routers
 from miliga.views.ligasView import LigasViewSet
 from miliga.views.equiposView import EquiposViewSet
-from miliga.views.competenciasView import CompetenciasViewSet
+from miliga.views.competenciasView import *
 from miliga.views.equiposCompetenciasView import EquiposCompetenciasViewSet
 
 router = routers.DefaultRouter()
@@ -14,4 +14,5 @@ router.register(r'equiposcompetencias', EquiposCompetenciasViewSet, 'equiposcomp
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('competencias/CompetenciasByLiga/<int:id>/', CompetenciasByLiga, name='CompetenciasByLiga')
 ]
